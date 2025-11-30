@@ -48,21 +48,17 @@
             transform: scale(1.05);
         }
 
-        /* Estilo específico para o círculo AV */
-        .av-circle {
+        /* Estilo específico para a imagem de perfil circular */
+        .profile-img-circle {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #1a1637; /* Fundo do círculo */
+            object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
             border: 2px solid var(--primary-neon);
-            /* O brilho intenso da imagem */
             box-shadow: 0 0 15px 5px var(--primary-neon), 0 0 30px 10px rgba(129, 140, 248, 0.5);
         }
 
-        .av-text {
+        .av-text { /* Mantido para a navegação, se for o caso */
             font-size: 4rem;
             font-weight: 800;
             color: var(--text-light);
@@ -129,8 +125,7 @@
 
         <!-- Barra de Navegação Superior (Minimalista, como na imagem) --><nav class="sticky top-0 z-20 bg-background-deep/90 backdrop-blur-sm px-6 py-4 border-b border-indigo-900/50">
             <div class="flex justify-between items-center max-w-6xl mx-auto">
-                <!-- Links de Navegação ajustados para mobile: Adicionado py-2 para touch target -->
-                <div class="flex items-center space-x-4 sm:space-x-6 overflow-x-auto whitespace-nowrap pb-1">
+                <!-- Links de Navegação ajustados para mobile: Adicionado py-2 para touch target --><div class="flex items-center space-x-4 sm:space-x-6 overflow-x-auto whitespace-nowrap pb-1">
                     <span class="text-xl font-bold text-primary-neon flex-shrink-0">RA</span>
                     <a href="#sobre" class="py-2 text-gray-400 hover:text-primary-neon transition duration-200 text-xs sm:text-sm flex-shrink-0">Sobre</a>
                     <a href="#projetos" class="py-2 text-gray-400 hover:text-primary-neon transition duration-200 text-xs sm:text-sm flex-shrink-0">Projetos</a>
@@ -142,33 +137,29 @@
             </div>
         </nav>
 
-        <!-- Seção de Cabeçalho / Herói (Com o círculo AV) --><header id="main-header" class="relative z-10 pt-10 sm:pt-16 pb-16 sm:pb-24 section-reveal">
+        <!-- Seção de Cabeçalho / Herói (Com a foto de perfil) --><header id="main-header" class="relative z-10 pt-10 sm:pt-16 pb-16 sm:pb-24 section-reveal">
             <div class="flex flex-col lg:flex-row items-center justify-between max-w-4xl mx-auto">
                 
-                <!-- 1. Textos (H1/H2) - Ordem 1 em mobile/desktop. Usa flex para alinhar o texto no centro do mobile, e à esquerda no desktop. -->
-                <div class="text-center lg:text-left lg:w-1/2 lg:mb-0 order-1 lg:order-1 flex flex-col items-center lg:items-start">
+                <!-- 1. Textos (H1/H2) - Ordem 1 em mobile/desktop. Usa flex para alinhar o texto no centro do mobile, e à esquerda no desktop. --><div class="text-center lg:text-left lg:w-1/2 lg:mb-0 order-1 lg:order-1 flex flex-col items-center lg:items-start">
                     <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-2 leading-tight tracking-wide">
                         Rafaela Alves
                     </h1>
                     <h2 class="text-xl sm:text-2xl font-medium text-primary-neon tracking-wider uppercase mb-8">
-                        Storyteller Digital & Diretor Criativo
+                        Storyteller Digital & Diretora Criativa
                     </h2>
                     
-                    <!-- Botão de Desktop (Visível apenas em LG+) -->
-                    <div class="hidden lg:block">
+                    <!-- Botão de Desktop (Visível apenas em LG+) --><div class="hidden lg:block">
                         <a href="#contato" class="inline-block py-3.5 px-8 bg-primary-neon text-white font-extrabold rounded-lg transition duration-300 shadow-xl shadow-indigo-900/50 btn-neon-pulse">
                             FALE COMIGO AGORA <i class="fas fa-hand-point-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- 2. Círculo AV (Profile Photo) - Ordem 2 em mobile/desktop. -->
-                <div class="av-circle flex-shrink-0 mb-10 lg:mb-0 order-2 lg:order-2">
-                    <span class="av-text">RA</span>
+                <!-- 2. Imagem de Perfil (Profile Photo) - Ordem 2 em mobile/desktop. --><div class="flex-shrink-0 mb-10 lg:mb-0 order-2 lg:order-2">
+                    <img class="profile-img-circle" src="https://assets-devel.bsh-g.com/images/a6c2f9f8-b3d6-4447-920f-043594acbf78/image-480x480" alt="Rafaela Alves - Perfil">
                 </div>
                 
-                <!-- 3. Botão de Mobile (Visível apenas em Mobile) - Ordem 3, garantindo que ele venha após o círculo AV. -->
-                <div class="w-full flex justify-center order-3 lg:hidden">
+                <!-- 3. Botão de Mobile (Visível apenas em Mobile) - Ordem 3, garantindo que ele venha após a imagem de perfil. --><div class="w-full flex justify-center order-3 lg:hidden">
                     <a href="#contato" class="inline-block py-3.5 px-8 bg-primary-neon text-white font-extrabold rounded-lg transition duration-300 shadow-xl shadow-indigo-900/50 btn-neon-pulse">
                         FALE COMIGO AGORA <i class="fas fa-hand-point-right ml-2"></i>
                     </a>
@@ -182,29 +173,25 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 
-                <!-- Card 1 -->
-                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                <!-- Card 1 --><div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
                     <span class="text-4xl text-primary-neon"><i class="fas fa-video"></i></span>
                     <h4 class="font-bold text-white text-lg">Narrativa Audiovisual</h4>
                     <p class="text-gray-400 text-sm">Especialista em roteiros e direção para cinema e documentários.</p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                <!-- Card 2 --><div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
                     <span class="text-4xl text-primary-neon"><i class="fas fa-lightbulb"></i></span>
                     <h4 class="font-bold text-white text-lg">Estratégia Criativa</h4>
                     <p class="text-gray-400 text-sm">Transformando insights de mercado em campanhas de alto impacto.</p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                <!-- Card 3 --><div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
                     <span class="text-4xl text-primary-neon"><i class="fas fa-layer-group"></i></span>
                     <h4 class="font-bold text-white text-lg">Design Transmídia</h4>
                     <p class="text-gray-400 text-sm">Integração de histórias em múltiplas plataformas digitais.</p>
                 </div>
 
-                <!-- Card 4 (Similar aos Depoimentos na imagem) -->
-                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                <!-- Card 4 (Similar aos Depoimentos na imagem) --><div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
                     <span class="text-4xl text-primary-neon"><i class="fas fa-globe"></i></span>
                     <h4 class="font-bold text-white text-lg">Alcance Global</h4>
                     <p class="text-gray-400 text-sm">Projetos desenvolvidos para audiências e mercados internacionais.</p>
@@ -212,49 +199,41 @@
             </div>
         </section>
         
-        <!-- Seção de Habilidades Chave (Módulo de Cards Simples) -->
-        <section id="habilidades" class="section-reveal">
+        <!-- Seção de Habilidades Chave (Módulo de Cards Simples) --><section id="habilidades" class="section-reveal">
             <h3 class="text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Habilidades Chave</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 
-                <!-- Habilidade 1 -->
-                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                <!-- Habilidade 1 --><div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
                     <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-pencil-ruler"></i></span>
                     <h4 class="font-bold text-white text-md">Roteiro</h4>
                 </div>
                 
-                <!-- Habilidade 2 -->
-                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                <!-- Habilidade 2 --><div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
                     <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-palette"></i></span>
                     <h4 class="font-bold text-white text-md">Direção de Arte</h4>
                 </div>
 
-                <!-- Habilidade 3 -->
-                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                <!-- Habilidade 3 --><div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
                     <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-sitemap"></i></span>
                     <h4 class="font-bold text-white text-md">Transmídia</h4>
                 </div>
 
-                <!-- Habilidade 4 -->
-                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                <!-- Habilidade 4 --><div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
                     <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-bullhorn"></i></span>
                     <h4 class="font-bold text-white text-md">Branding</h4>
                 </div>
 
-                <!-- Habilidade 5 -->
-                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                <!-- Habilidade 5 --><div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
                     <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-magic"></i></span>
                     <h4 class="font-bold text-white text-md">Pós-Produção</h4>
                 </div>
 
-                <!-- Habilidade 6 -->
-                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                <!-- Habilidade 6 --><div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
                     <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-hand-holding-heart"></i></span>
                     <h4 class="font-bold text-white text-md">Design Emocional</h4>
                 </div>
 
-                <!-- Habilidade 7 -->
-                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                <!-- Habilidade 7 --><div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
                     <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-users"></i></span>
                     <h4 class="font-bold text-white text-md">Liderança</h4>
                 </div>
@@ -268,8 +247,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Projeto 1: Documentário -->
-                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                <!-- Projeto 1: Documentário --><div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
                     <img class="w-full h-full object-cover" 
                          src="https://placehold.co/600x400/818CF8/1A1637?text=O+Legado+dos+Ventos" 
                          alt="Capa do Projeto O Legado dos Ventos">
@@ -283,8 +261,7 @@
                     </div>
                 </div>
 
-                <!-- Projeto 2: Mídia Social -->
-                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                <!-- Projeto 2: Mídia Social --><div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
                     <img class="w-full h-full object-cover" 
                          src="https://placehold.co/600x400/6366F1/1A1637?text=Campanha+Logística" 
                          alt="Capa do Projeto Caminhos Conectados">
@@ -298,8 +275,7 @@
                     </div>
                 </div>
 
-                <!-- Projeto 3: UX Narrativo -->
-                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                <!-- Projeto 3: UX Narrativo --><div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
                     <img class="w-full h-full object-cover" 
                          src="https://placehold.co/600x400/60A5FA/1A1637?text=UX+App" 
                          alt="Capa do Projeto A Máquina do Tempo">
@@ -313,8 +289,7 @@
                     </div>
                 </div>
 
-                <!-- Projeto 4: Branding -->
-                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                <!-- Projeto 4: Branding --><div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
                     <img class="w-full h-full object-cover" 
                          src="https://placehold.co/600x400/EC4899/1A1637?text=Branding+Sustentável" 
                          alt="Capa do Projeto O Poder da Identidade">
@@ -328,8 +303,7 @@
                     </div>
                 </div>
 
-                <!-- Projeto 5: Realidade Virtual -->
-                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                <!-- Projeto 5: Realidade Virtual --><div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
                     <img class="w-full h-full object-cover" 
                          src="https://placehold.co/600x400/8B5CF6/1A1637?text=Experiência+VR" 
                          alt="Capa do Projeto Mundo Submerso VR">
@@ -351,10 +325,9 @@
             <h3 class="text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Depoimentos</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 
-                <!-- Depoimento 1 -->
-                <div class="bg-card-bg p-7 rounded-xl shadow-xl border border-indigo-900/50 card-glow relative">
+                <!-- Depoimento 1 --><div class="bg-card-bg p-7 rounded-xl shadow-xl border border-indigo-900/50 card-glow relative">
                     <span class="absolute top-0 right-0 text-7xl font-extrabold text-primary-neon opacity-10 leading-none">”</span>
-                    <p class="text-white text-lg mb-4 italic leading-relaxed">"Artur não apenas conta uma história; ele a transforma em uma experiência imersiva. Profissionalismo e criatividade em alta."</p>
+                    <p class="text-white text-lg mb-4 italic leading-relaxed">"Rafaela não apenas conta uma história; ela a transforma em uma experiência imersiva. Profissionalismo e criatividade em alta."</p>
                     <div class="flex items-center mt-5">
                         <img class="w-12 h-12 rounded-full mr-4 border-2 border-primary-neon object-cover" src="https://placehold.co/100x100/374151/FFFFFF?text=RS" alt="Avatar">
                         <div>
@@ -364,10 +337,9 @@
                     </div>
                 </div>
 
-                <!-- Depoimento 2 -->
-                <div class="bg-card-bg p-7 rounded-xl shadow-xl border border-indigo-900/50 card-glow relative">
+                <!-- Depoimento 2 --><div class="bg-card-bg p-7 rounded-xl shadow-xl border border-indigo-900/50 card-glow relative">
                     <span class="absolute top-0 right-0 text-7xl font-extrabold text-primary-neon opacity-10 leading-none">”</span>
-                    <p class="text-white text-lg mb-4 italic leading-relaxed">"A visão de Artur elevou nosso branding a um novo patamar de autenticidade. Um verdadeiro mestre na arte de cativar."</p>
+                    <p class="text-white text-lg mb-4 italic leading-relaxed">"A visão de Rafaela elevou nosso branding a um novo patamar de autenticidade. Uma verdadeira mestra na arte de cativar."</p>
                     <div class="flex items-center mt-5">
                         <img class="w-12 h-12 rounded-full mr-4 border-2 border-primary-neon object-cover" src="https://placehold.co/100x100/374151/FFFFFF?text=JP" alt="Avatar">
                         <div>
@@ -384,23 +356,19 @@
 
             <div class="flex justify-center md:justify-start space-x-10">
                 
-                <!-- Ícone 1: Email -->
-                <a href="mailto:rafaela.alves@emailficticio.com" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                <!-- Ícone 1: Email --><a href="mailto:rafaela.alves@emailficticio.com" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
                     <i class="fas fa-envelope fa-2x"></i>
                     <span class="sr-only">Email</span>
                 </a>
-                <!-- Ícone 2: LinkedIn -->
-                <a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                <!-- Ícone 2: LinkedIn --><a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
                     <i class="fab fa-linkedin fa-2x"></i>
                     <span class="sr-only">LinkedIn</span>
                 </a>
-                <!-- Ícone 3: Instagram -->
-                <a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                <!-- Ícone 3: Instagram --><a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
                     <i class="fab fa-instagram fa-2x"></i>
                     <span class="sr-only">Instagram</span>
                 </a>
-                <!-- Ícone 4: Twitter (Fictício) -->
-                <a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                <!-- Ícone 4: Twitter (Fictício) --><a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
                     <i class="fab fa-twitter fa-2x"></i>
                     <span class="sr-only">Twitter</span>
                 </a>
