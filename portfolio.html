@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Artur Valente, Storyteller</title>
+    <!-- Carrega o Tailwind CSS para estilização --><script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Configuração de fonte e cores de tema (Tema Escuro com Indigo Brilhante Neon) */
+        :root {
+            --primary-neon: #818CF8; /* Indigo 400 */
+            --primary-dark: #6366F1; /* Indigo 500 */
+            --background-deep: #100D28; /* Fundo muito escuro */
+            --card-bg: #1A1637; /* Fundo dos cards */
+            --text-light: #E0E7FF; /* Cor do texto principal */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-deep);
+            color: var(--text-light);
+        }
+
+        /* Estilo para simular o brilho neon */
+        .neon-glow {
+            box-shadow: 0 0 10px var(--primary-neon), 0 0 20px var(--primary-neon), inset 0 0 10px var(--primary-neon);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .neon-glow-subtle {
+            box-shadow: 0 0 5px rgba(129, 140, 248, 0.5), 0 0 10px rgba(129, 140, 248, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card-glow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9), 0 0 20px var(--primary-neon);
+        }
+
+        /* NOVO ESTILO: Botão Principal com Pulso Neon */
+        .btn-neon-pulse {
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-neon-pulse:hover {
+            box-shadow: 0 0 15px var(--primary-neon), 0 0 30px var(--primary-neon);
+            transform: scale(1.05);
+        }
+
+        /* Estilo específico para o círculo AV */
+        .av-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1637; /* Fundo do círculo */
+            border: 2px solid var(--primary-neon);
+            /* O brilho intenso da imagem */
+            box-shadow: 0 0 15px 5px var(--primary-neon), 0 0 30px 10px rgba(129, 140, 248, 0.5);
+        }
+
+        .av-text {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-shadow: 0 0 5px var(--primary-neon), 0 0 10px var(--primary-neon);
+        }
+
+        /* Animação de revelação mantida */
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .section-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* NOVO: Estilo para o Card da Galeria de Projetos */
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(129, 140, 248, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(26, 22, 55, 0.0) 50%, rgba(129, 140, 248, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        .project-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            background: rgba(26, 22, 55, 0.8); /* Fundo semi-transparente */
+            backdrop-filter: blur(5px);
+        }
+        .project-card:hover .project-card-content {
+            transform: translateY(0);
+        }
+        .project-card-title {
+            color: var(--primary-neon);
+            text-shadow: 0 0 5px var(--primary-neon);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex justify-center">
+
+    <div class="w-full max-w-6xl space-y-20 p-4 sm:p-8">
+
+        <!-- Barra de Navegação Superior (Minimalista, como na imagem) --><nav class="sticky top-0 z-20 bg-background-deep/90 backdrop-blur-sm px-6 py-4 border-b border-indigo-900/50">
+            <div class="flex justify-between items-center max-w-6xl mx-auto">
+                <div class="flex items-center space-x-6">
+                    <span class="text-xl font-bold text-primary-neon">AV</span>
+                    <a href="#sobre" class="text-gray-400 hover:text-primary-neon transition duration-200 text-sm">Sobre</a>
+                    <a href="#projetos" class="text-gray-400 hover:text-primary-neon transition duration-200 text-sm">Projetos</a>
+                    <a href="#habilidades" class="text-gray-400 hover:text-primary-neon transition duration-200 text-sm">Habilidades</a> <!-- Link Adicionado -->
+                    <a href="#depoimentos" class="text-gray-400 hover:text-primary-neon transition duration-200 text-sm">Depoimentos</a>
+                    <a href="#contato" class="text-gray-400 hover:text-primary-neon transition duration-200 text-sm">Contato</a>
+                </div>
+                <button class="text-gray-400 hover:text-primary-neon transition duration-200"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+
+        <!-- Seção de Cabeçalho / Herói (Com o círculo AV) --><header id="main-header" class="relative z-10 pt-16 pb-24 section-reveal">
+            <div class="flex flex-col lg:flex-row items-center justify-between max-w-4xl mx-auto">
+                
+                <!-- Coluna de Texto e Botão -->
+                <div class="text-left lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-6xl font-extrabold text-white mb-2 leading-tight tracking-wide">
+                        Artur Valente
+                    </h1>
+                    <h2 class="text-2xl font-medium text-primary-neon tracking-wider uppercase mb-8">
+                        Storyteller Digital & Diretor Criativo
+                    </h2>
+                    
+                    <!-- Botão Principal ATUALIZADO com o Neon Look -->
+                    <a href="#contato" class="inline-block py-3.5 px-8 bg-primary-neon text-white font-extrabold rounded-lg transition duration-300 shadow-xl shadow-indigo-900/50 btn-neon-pulse">
+                        FALE COMIGO AGORA <i class="fas fa-hand-point-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Círculo AV com Brilho Neon (Elemento Central da Imagem) -->
+                <div class="av-circle flex-shrink-0">
+                    <span class="av-text">AV</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Seção: Sobre Minha Jornada (Grid de Ícones) --><section id="sobre" class="section-reveal">
+            <h3 class="text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Sobre Minha Jornada</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                    <span class="text-4xl text-primary-neon"><i class="fas fa-video"></i></span>
+                    <h4 class="font-bold text-white text-lg">Narrativa Audiovisual</h4>
+                    <p class="text-gray-400 text-sm">Especialista em roteiros e direção para cinema e documentários.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                    <span class="text-4xl text-primary-neon"><i class="fas fa-lightbulb"></i></span>
+                    <h4 class="font-bold text-white text-lg">Estratégia Criativa</h4>
+                    <p class="text-gray-400 text-sm">Transformando insights de mercado em campanhas de alto impacto.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                    <span class="text-4xl text-primary-neon"><i class="fas fa-layer-group"></i></span>
+                    <h4 class="font-bold text-white text-lg">Design Transmídia</h4>
+                    <p class="text-gray-400 text-sm">Integração de histórias em múltiplas plataformas digitais.</p>
+                </div>
+
+                <!-- Card 4 (Similar aos Depoimentos na imagem) -->
+                <div class="bg-card-bg p-6 rounded-xl border border-indigo-900/50 card-glow flex flex-col items-start space-y-3">
+                    <span class="text-4xl text-primary-neon"><i class="fas fa-globe"></i></span>
+                    <h4 class="font-bold text-white text-lg">Alcance Global</h4>
+                    <p class="text-gray-400 text-sm">Projetos desenvolvidos para audiências e mercados internacionais.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- NOVO: Seção de Habilidades Chave (Módulo de Cards Simples) -->
+        <section id="habilidades" class="section-reveal">
+            <h3 class="text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Habilidades Chave</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                
+                <!-- Habilidade 1 -->
+                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                    <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-pencil-ruler"></i></span>
+                    <h4 class="font-bold text-white text-md">Roteiro</h4>
+                </div>
+                
+                <!-- Habilidade 2 -->
+                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                    <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-palette"></i></span>
+                    <h4 class="font-bold text-white text-md">Direção de Arte</h4>
+                </div>
+
+                <!-- Habilidade 3 -->
+                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                    <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-sitemap"></i></span>
+                    <h4 class="font-bold text-white text-md">Transmídia</h4>
+                </div>
+
+                <!-- Habilidade 4 -->
+                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                    <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-bullhorn"></i></span>
+                    <h4 class="font-bold text-white text-md">Branding</h4>
+                </div>
+
+                <!-- Habilidade 5 -->
+                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                    <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-magic"></i></span>
+                    <h4 class="font-bold text-white text-md">Pós-Produção</h4>
+                </div>
+
+                <!-- Habilidade 6 -->
+                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                    <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-hand-holding-heart"></i></span>
+                    <h4 class="font-bold text-white text-md">Design Emocional</h4>
+                </div>
+
+                <!-- Habilidade 7 -->
+                <div class="bg-card-bg p-5 rounded-xl border border-indigo-900/50 card-glow text-center">
+                    <span class="text-4xl text-primary-neon block mb-2"><i class="fas fa-users"></i></span>
+                    <h4 class="font-bold text-white text-md">Liderança</h4>
+                </div>
+                
+            </div>
+        </section>
+
+
+        <!-- Seção: Projetos em Destaque (Galeria Moderna) --><section id="projetos" class="section-reveal">
+            <h3 class="text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Galeria de Projetos em Destaque</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Projeto 1: Documentário -->
+                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                    <img class="w-full h-full object-cover" 
+                         src="https://placehold.co/600x400/818CF8/1A1637?text=O+Legado+dos+Ventos" 
+                         alt="Capa do Projeto O Legado dos Ventos">
+                    <div class="project-card-content rounded-b-xl">
+                        <span class="text-xs font-semibold text-white bg-indigo-500 rounded-full px-3 py-1 mb-2 inline-block">Documentário</span>
+                        <h4 class="text-2xl font-bold project-card-title mb-1">Decupera Destinuge</h4>
+                        <p class="text-gray-300 text-sm mb-3 truncate">
+                            Longa-metragem explorando cultura e ativismo indígena na Amazônia.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white hover:text-primary-dark transition duration-200 flex items-center">Ver Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: Mídia Social -->
+                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                    <img class="w-full h-full object-cover" 
+                         src="https://placehold.co/600x400/6366F1/1A1637?text=Campanha+Logística" 
+                         alt="Capa do Projeto Caminhos Conectados">
+                    <div class="project-card-content rounded-b-xl">
+                        <span class="text-xs font-semibold text-white bg-violet-500 rounded-full px-3 py-1 mb-2 inline-block">Mídia Social</span>
+                        <h4 class="text-2xl font-bold project-card-title mb-1">Dois Volumante</h4>
+                        <p class="text-gray-300 text-sm mb-3 truncate">
+                            Campanha interativa de startup de logística com grande aumento de engajamento orgânico.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white hover:text-primary-dark transition duration-200 flex items-center">Ver Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: UX Narrativo -->
+                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                    <img class="w-full h-full object-cover" 
+                         src="https://placehold.co/600x400/60A5FA/1A1637?text=UX+App" 
+                         alt="Capa do Projeto A Máquina do Tempo">
+                    <div class="project-card-content rounded-b-xl">
+                        <span class="text-xs font-semibold text-white bg-blue-500 rounded-full px-3 py-1 mb-2 inline-block">UX Design</span>
+                        <h4 class="text-2xl font-bold project-card-title mb-1">A Máquina do Tempo</h4>
+                        <p class="text-gray-300 text-sm mb-3 truncate">
+                            Design de experiência gamificado para aplicativo de história e cultura.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white hover:text-primary-dark transition duration-200 flex items-center">Ver Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projeto 4: Branding -->
+                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                    <img class="w-full h-full object-cover" 
+                         src="https://placehold.co/600x400/EC4899/1A1637?text=Branding+Sustentável" 
+                         alt="Capa do Projeto O Poder da Identidade">
+                    <div class="project-card-content rounded-b-xl">
+                        <span class="text-xs font-semibold text-white bg-pink-500 rounded-full px-3 py-1 mb-2 inline-block">Branding</span>
+                        <h4 class="text-2xl font-bold project-card-title mb-1">O Poder da Identidade</h4>
+                        <p class="text-gray-300 text-sm mb-3 truncate">
+                            Criação completa do Brand Story para marca de moda sustentável.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white hover:text-primary-dark transition duration-200 flex items-center">Ver Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projeto 5: Realidade Virtual -->
+                <div class="project-card rounded-xl shadow-xl border border-indigo-900/50 card-glow h-72">
+                    <img class="w-full h-full object-cover" 
+                         src="https://placehold.co/600x400/8B5CF6/1A1637?text=Experiência+VR" 
+                         alt="Capa do Projeto Mundo Submerso VR">
+                    <div class="project-card-content rounded-b-xl">
+                        <span class="text-xs font-semibold text-white bg-purple-500 rounded-full px-3 py-1 mb-2 inline-block">Realidade Virtual</span>
+                        <h4 class="text-2xl font-bold project-card-title mb-1">Mundo Submerso VR</h4>
+                        <p class="text-gray-300 text-sm mb-3 truncate">
+                            Criação de narrativa imersiva para experiência de realidade virtual educativa.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white hover:text-primary-dark transition duration-200 flex items-center">Ver Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- A Seção de Habilidades que estava em Projetos foi movida para cima. -->
+
+
+        <!-- Seção: Depoimentos (Estilo Citação/Avatar, como na imagem) --><section id="depoimentos" class="section-reveal">
+            <h3 class="text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Depoimentos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Depoimento 1 -->
+                <div class="bg-card-bg p-7 rounded-xl shadow-xl border border-indigo-900/50 card-glow relative">
+                    <span class="absolute top-0 right-0 text-7xl font-extrabold text-primary-neon opacity-10 leading-none">”</span>
+                    <p class="text-white text-lg mb-4 italic leading-relaxed">"Artur não apenas conta uma história; ele a transforma em uma experiência imersiva. Profissionalismo e criatividade em alta."</p>
+                    <div class="flex items-center mt-5">
+                        <img class="w-12 h-12 rounded-full mr-4 border-2 border-primary-neon object-cover" src="https://placehold.co/100x100/374151/FFFFFF?text=RS" alt="Avatar">
+                        <div>
+                            <p class="font-semibold text-white">Roberto Santos</p>
+                            <p class="text-sm text-gray-400">Diretor, Estúdio Íris</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="bg-card-bg p-7 rounded-xl shadow-xl border border-indigo-900/50 card-glow relative">
+                    <span class="absolute top-0 right-0 text-7xl font-extrabold text-primary-neon opacity-10 leading-none">”</span>
+                    <p class="text-white text-lg mb-4 italic leading-relaxed">"A visão de Artur elevou nosso branding a um novo patamar de autenticidade. Um verdadeiro mestre na arte de cativar."</p>
+                    <div class="flex items-center mt-5">
+                        <img class="w-12 h-12 rounded-full mr-4 border-2 border-primary-neon object-cover" src="https://placehold.co/100x100/374151/FFFFFF?text=JP" alt="Avatar">
+                        <div>
+                            <p class="font-semibold text-white">Juliana Pires</p>
+                            <p class="text-sm text-gray-400">CMO, TechNova</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Contato/Social (Estilo Ícones Neon) --><section id="contato" class="section-reveal pt-10">
+            <h3 class="text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Conecte-se</h3>
+
+            <div class="flex justify-center md:justify-start space-x-10">
+                
+                <!-- Ícone 1: Email -->
+                <a href="mailto:artur.valente@emailficticio.com" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                    <i class="fas fa-envelope fa-2x"></i>
+                    <span class="sr-only">Email</span>
+                </a>
+                <!-- Ícone 2: LinkedIn -->
+                <a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+                <!-- Ícone 3: Instagram -->
+                <a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <!-- Ícone 4: Twitter (Fictício) -->
+                <a href="#" class="text-primary-neon hover:text-white transition duration-200 transform hover:scale-110 neon-glow-subtle rounded-full p-2">
+                    <i class="fab fa-twitter fa-2x"></i>
+                    <span class="sr-only">Twitter</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Rodapé --><footer class="text-center py-8 text-gray-600 text-sm mt-20">
+            <p>&copy; 2024 Artur Valente Storytelling. Design inspirado em UI Neon.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        
+        // JavaScript para animação de revelação de seções ao rolar
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-reveal');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
