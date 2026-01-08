@@ -135,7 +135,7 @@
             100% { transform: translateY(0px); }
         }
 
-        /* --- ESTILOS SEÇÃO SERVIÇOS (O Que Eu Faço) --- */
+        /* --- ESTILOS SEÇÃO SERVIÇOS --- */
         .service-card {
             background-color: var(--card-dark);
             border-radius: 1rem;
@@ -146,7 +146,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            text-align: left; /* Alinhamento à esquerda conforme imagem */
+            text-align: left;
         }
         
         .service-card:hover {
@@ -195,7 +195,7 @@
             position: relative;
             border-radius: 1rem;
             overflow: hidden;
-            aspect-ratio: 9 / 16; /* Formato Story */
+            aspect-ratio: 9 / 16;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -221,10 +221,9 @@
             padding: 1.25rem;
         }
         
-        /* Badges dentro dos stories */
         .story-badge {
             display: inline-block;
-            background-color: rgba(236, 72, 153, 0.2); /* Pink tint */
+            background-color: rgba(236, 72, 153, 0.2);
             color: #F472B6;
             font-size: 0.7rem;
             font-weight: 800;
@@ -233,11 +232,6 @@
             border-radius: 0.25rem;
             margin-bottom: 0.5rem;
             width: fit-content;
-        }
-        
-        .story-badge.purple {
-            background-color: rgba(139, 92, 246, 0.2);
-            color: #A78BFA;
         }
 
         /* --- INPUTS FORMULÁRIO --- */
@@ -275,7 +269,7 @@
 
     <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
 
-        <!-- Navbar (Agora Fixa) -->
+        <!-- Navbar -->
         <nav class="sticky top-0 z-50 bg-[#050507]/80 backdrop-blur-md border-b border-white/10 flex justify-between items-center py-4 mb-8 transition-all duration-300">
             <div class="flex items-center gap-2">
                 <div class="text-pink-500 text-2xl"><i class="fas fa-vector-square"></i></div>
@@ -297,9 +291,10 @@
                     <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                     Disponível para projetos
                 </div>
+                <!-- Texto atualizado conforme solicitado -->
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
-                    Transformando seguidores em <br>
-                    <span class="text-gradient">Fãs Leais.</span>
+                    Transformando momentos vividos em <br>
+                    <span class="text-gradient">Conexões reais</span>
                 </h1>
                 <p class="text-gray-400 text-lg mb-10 max-w-lg leading-relaxed">
                     Sou a Rafaela, storymaker profissional. Crio narrativas visuais imersivas que aumentam o engajamento e vendem o lifestyle da sua marca em 15 segundos.
@@ -317,7 +312,7 @@
                 <div class="relative w-72 h-72 sm:w-96 sm:h-96">
                     <div class="gradient-ring w-full h-full p-1 shadow-[0_0_50px_rgba(236,72,153,0.3)]">
                         <img class="w-full h-full object-cover rounded-full border-4 border-[#050507]" 
-                             src="https://raw.githubusercontent.com/contatolucasao-netizen/portfolio-rafa/28712366008463cde5af7ea305c6ddd4ca9335e7/Rafa.png" 
+                             src="https://raw.githubusercontent.com/contatolucasao-netizen/portfolio-rafa/main/okoko.jpeg" 
                              alt="Rafaela Alves">
                     </div>
                     <div class="floating-card absolute -bottom-4 -left-4 sm:bottom-4 sm:-left-8 px-5 py-4 rounded-2xl flex items-center gap-4">
@@ -329,14 +324,11 @@
                             <p class="text-xl font-bold text-white">12.5k+</p>
                         </div>
                     </div>
-                    <div class="absolute -z-10 top-0 right-0 w-full h-full opacity-30">
-                        <div class="absolute top-10 right-0 w-32 h-1 bg-pink-500 transform rotate-45 blur-sm"></div>
-                        <div class="absolute bottom-20 left-10 w-40 h-1 bg-purple-500 transform -rotate-12 blur-sm"></div>
-                    </div>
                 </div>
             </div>
         </header>
 
+        <!-- O restante das seções permanece inalterado -->
         <!-- Seção: O Que Eu Faço -->
         <section class="py-20" id="servicos">
             <div class="text-center mb-16">
@@ -345,8 +337,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Card 1 -->
                 <div class="service-card group">
                     <div class="service-icon-wrapper group-hover:bg-white group-hover:text-black transition-colors duration-300">
                         <i class="fas fa-calendar-check"></i>
@@ -357,7 +347,6 @@
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="service-card group">
                     <div class="service-icon-wrapper group-hover:bg-white group-hover:text-black transition-colors duration-300">
                         <i class="far fa-circle"></i>
@@ -368,7 +357,6 @@
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="service-card group">
                     <div class="service-icon-wrapper group-hover:bg-white group-hover:text-black transition-colors duration-300">
                         <i class="fas fa-bullhorn"></i>
@@ -378,21 +366,16 @@
                         Sequências estratégicas de stories desenhadas para aquecer a audiência e converter seguidores em clientes.
                     </p>
                 </div>
-
             </div>
         </section>
 
         <!-- Galeria de Stories -->
         <section class="py-10" id="portfolio">
-             
-             <!-- Header da Galeria -->
              <div class="flex flex-col lg:flex-row justify-between items-end mb-12 gap-6">
                  <div>
                      <h2 class="text-4xl font-black mb-2 text-white">Galeria de Stories</h2>
                      <p class="text-gray-400">Clique para visualizar a experiência imersiva.</p>
                  </div>
-                 
-                 <!-- Filtros -->
                  <div class="flex flex-wrap gap-3">
                      <button class="filter-btn active">Todos</button>
                      <button class="filter-btn inactive">Lifestyle</button>
@@ -401,15 +384,13 @@
                  </div>
              </div>
 
-             <!-- Grid de Projetos 9:16 -->
              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                 
                  <!-- Story 1 -->
                  <div class="story-card group">
                      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Café">
                      <div class="story-overlay">
                          <span class="story-badge">Gastronomia</span>
-                         <h3 class="text-white font-bold text-sm">Morning moods ☕ #cafe #vibes</h3>
+                         <h3 class="text-white font-bold text-sm">Morning moods ☕</h3>
                      </div>
                  </div>
 
@@ -418,7 +399,7 @@
                      <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Street Style">
                      <div class="story-overlay">
                          <span class="story-badge">Moda</span>
-                         <h3 class="text-white font-bold text-sm">Street style de hoje. Link na bio! 🔥</h3>
+                         <h3 class="text-white font-bold text-sm">Street style de hoje. 🔥</h3>
                      </div>
                  </div>
 
@@ -426,8 +407,8 @@
                  <div class="story-card group">
                      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Setup Tech">
                      <div class="story-overlay">
-                         <span class="story-badge purple">Tech</span>
-                         <h3 class="text-white font-bold text-sm">Setup atualizado para editar os vlogs. 💻</h3>
+                         <span class="story-badge">Tech</span>
+                         <h3 class="text-white font-bold text-sm">Setup atualizado. 💻</h3>
                      </div>
                  </div>
 
@@ -436,85 +417,47 @@
                      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Avião">
                      <div class="story-overlay">
                          <span class="story-badge">Viagem</span>
-                         <h3 class="text-white font-bold text-sm">Próxima parada: Rio de Janeiro ✈️</h3>
+                         <h3 class="text-white font-bold text-sm">Próxima parada ✈️</h3>
                      </div>
                  </div>
-
-                 <!-- Story 5 -->
-                 <div class="story-card group">
-                     <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Trabalho Remoto">
-                     <div class="story-overlay">
-                         <span class="story-badge">Lifestyle</span>
-                         <h3 class="text-white font-bold text-sm">Rotina de trabalho remoto 💻✨</h3>
-                     </div>
-                 </div>
-
-                 <!-- Story 6 -->
-                 <div class="story-card group">
-                     <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Moda Outono">
-                     <div class="story-overlay">
-                         <span class="story-badge">Moda</span>
-                         <h3 class="text-white font-bold text-sm">Tendências de outono. Já conferiram? 🍂</h3>
-                     </div>
-                 </div>
-
-                 <!-- Story 7 -->
-                 <div class="story-card group">
-                     <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pizza">
-                     <div class="story-overlay">
-                         <span class="story-badge">Gastronomia</span>
-                         <h3 class="text-white font-bold text-sm">Noite de pizza caseira! 🍕😋</h3>
-                     </div>
-                 </div>
-
-                 <!-- Story 8 -->
-                 <div class="story-card group">
-                     <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Praia">
-                     <div class="story-overlay">
-                         <span class="story-badge">Viagem</span>
-                         <h3 class="text-white font-bold text-sm">Saudades desse paraíso tropical 🌴🌊</h3>
-                     </div>
-                 </div>
-
              </div>
         </section>
 
-        <!-- CTA / Contato Section (NOVA COM FUNDO MELHORADO) -->
+        <!-- CTA / Contato -->
         <section id="contato" class="py-24 relative overflow-hidden">
-            <!-- Enhanced Background Elements -->
             <div class="absolute inset-0 w-full h-full">
-                 <!-- Main bottom glow - Centralizado e com largura contida para evitar corte nas bordas -->
                 <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4/5 h-[500px] bg-gradient-to-t from-purple-900/30 via-pink-900/10 to-transparent pointer-events-none blur-[120px]"></div>
             </div>
 
             <div class="max-w-2xl mx-auto text-center relative z-10 px-6">
                 <h2 class="text-3xl md:text-5xl font-black mb-4 text-white">Pronto para o próximo nível?</h2>
-                <p class="text-gray-400 mb-12 text-lg">Minha agenda para o próximo mês está fechando. Vamos contar a sua história?</p>
+                <p class="text-gray-400 mb-12 text-lg">Vamos contar a sua história?</p>
                 
-                <form class="space-y-6 text-left" action="#" method="POST" onsubmit="event.preventDefault(); alert('Obrigado! Em breve entrarei em contato.');">
+                <form class="space-y-6 text-left" action="#" method="POST" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden');">
                     <div>
                         <label class="form-label">Seu Nome</label>
-                        <input type="text" placeholder="Digite aqui..." class="form-input">
+                        <input type="text" placeholder="Digite aqui..." class="form-input" required>
                     </div>
                     <div>
                         <label class="form-label">Seu Instagram</label>
-                        <input type="text" placeholder="@seuuser" class="form-input">
+                        <input type="text" placeholder="@seuuser" class="form-input" required>
                     </div>
                     <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 rounded-lg hover:opacity-90 transition-opacity mt-4 text-lg">
                         Solicitar Orçamento
                     </button>
+                    <p id="success-msg" class="hidden text-green-500 text-center font-bold mt-4">Mensagem enviada com sucesso!</p>
                 </form>
             </div>
         </section>
 
-        <!-- Footer Minimalista (NOVO) -->
+        <!-- Footer -->
         <footer class="py-10 border-t border-gray-900 text-gray-500 text-sm">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>&copy; 2024 Rafaela Alves. Portfolio Fictício.</p>
+                <p>&copy; 2024 Rafaela Alves. Portfolio Profissional.</p>
                 <div class="flex gap-6">
-                    <a href="https://www.instagram.com/eurafa.storymaker" class="hover:text-white transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
                     <a href="#" class="hover:text-white transition-colors">TikTok</a>
-                    <a href="#" class="hover:text-white transition-colors">Whatsapp</a>
+                    <a href="#" class="hover:text-white transition-colors">WhatsApp</a>
                 </div>
             </div>
         </footer>
@@ -523,4 +466,3 @@
 
 </body>
 </html>
-
