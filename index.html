@@ -412,7 +412,7 @@
                      </div>
                  </div>
 
-                 <!-- Story 3: Lounge (Substituído Tech/Setup) -->
+                 <!-- Story 3: Lounge -->
                  <div class="story-card group">
                      <video 
                         src="https://raw.githubusercontent.com/contatolucasao-netizen/portfolio-rafa/main/Lounge.mp4" 
@@ -480,5 +480,16 @@
 
     </div>
 
+    <!-- Script para assegurar que os vídeos comecem a tocar automaticamente -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.play().catch(error => {
+                    console.log("O autoplay foi bloqueado pelo navegador, mas o vídeo tentará tocar novamente após interação.");
+                });
+            });
+        });
+    </script>
 </body>
 </html>
