@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-PT" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* Fundo com gradientes sutis */
+        /* Fundo com gradientes subtis */
         .bg-glow-purple {
             position: absolute;
             width: 600px;
@@ -238,6 +238,19 @@
             width: fit-content;
         }
 
+        /* --- ESTILOS DEPOIMENTOS --- */
+        .testimonial-card {
+            background-color: var(--card-dark);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            border-color: rgba(236, 72, 153, 0.3);
+            transform: translateY(-5px);
+        }
+
         /* --- INPUTS FORMULÁRIO --- */
         .form-input {
             width: 100%;
@@ -283,7 +296,7 @@
                 <a href="#sobre" class="nav-link text-sm">Sobre</a>
                 <a href="#portfolio" class="nav-link text-sm">Portfólio</a>
                 <a href="#servicos" class="nav-link text-sm">Serviços</a>
-                <a href="#contato" class="nav-btn-contact text-sm">Contato</a>
+                <a href="#contato" class="nav-btn-contact text-sm">Contacto</a>
             </div>
             <button class="md:hidden text-white text-xl"><i class="fas fa-bars"></i></button>
         </nav>
@@ -307,7 +320,7 @@
                         Ver Stories <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="#contato" class="btn-secondary px-8 py-4 text-sm flex items-center justify-center">
-                        Meus Pacotes
+                        Os Meus Pacotes
                     </a>
                 </div>
             </div>
@@ -355,7 +368,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Social Mídia</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Criação de templates, stickers e paleta de cores exclusiva para manter seus stories consistentes e reconhecíveis.
+                        Criação de templates, stickers e paleta de cores exclusiva para manter os seus stories consistentes e reconhecíveis.
                     </p>
                 </div>
 
@@ -403,7 +416,7 @@
                      </div>
                  </div>
 
-                 <!-- Story 2: Gloria Groove (Badge atualizado para Show) -->
+                 <!-- Story 2: Gloria Groove -->
                  <div class="story-card group">
                      <img src="https://raw.githubusercontent.com/contatolucasao-netizen/portfolio-rafa/main/%40gloriagroove%20%F0%9F%93%B8...%40centraldagg%20%40espacohall.jpg" alt="Gloria Groove">
                      <div class="story-overlay">
@@ -439,7 +452,85 @@
              </div>
         </section>
 
-        <!-- CTA / Contato -->
+        <!-- Secção: Depoimentos -->
+        <section class="py-24" id="depoimentos">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-3 text-white">O Que Dizem Os Meus Clientes</h2>
+                <p class="text-gray-400 text-lg">Histórias reais de quem confiou na minha visão.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card">
+                    <div class="flex text-pink-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">
+                        "A Rafaela tem um olhar único. Conseguiu registar o meu evento de uma forma leve e muito profissional. Recomendo imenso!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">PS</div>
+                        <div>
+                            <h4 class="text-white font-bold">Pedro Santos</h4>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Organizador de Eventos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2: Mariana Costa (Casamento) - PARTE DO LOUNGE REMOVIDA -->
+                <div class="testimonial-card">
+                    <div class="flex text-pink-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">
+                        "Não tenho palavras para o trabalho da Rafa no meu casamento. Ela captou olhares e detalhes que nem eu percebi."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">MC</div>
+                        <div>
+                            <h4 class="text-white font-bold">Mariana Costa</h4>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Noiva</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card">
+                    <div class="flex text-pink-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">
+                        "Ter a Rafa a cuidar da nossa identidade nos Stories mudou o jogo. As nossas conexões reais com os seguidores triplicaram desde que começámos a estratégia dela."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">AJ</div>
+                        <div>
+                            <h4 class="text-white font-bold">Ana Julia</h4>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Influenciadora de Moda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 4 -->
+                <div class="testimonial-card">
+                    <div class="flex text-pink-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">
+                        "O conteúdo do nosso chá revelação ficou emocionante e super moderno. Ela não apenas grava, ela realmente conta a história do momento. Vale cada cêntimo!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">CB</div>
+                        <div>
+                            <h4 class="text-white font-bold">Carla & Bruno</h4>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Pais do Chá Revelação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Contacto -->
         <section id="contato" class="py-24 relative overflow-hidden">
             <div class="absolute inset-0 w-full h-full">
                 <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4/5 h-[500px] bg-gradient-to-t from-purple-900/30 via-pink-900/10 to-transparent pointer-events-none blur-[120px]"></div>
@@ -447,16 +538,16 @@
 
             <div class="max-w-2xl mx-auto text-center relative z-10 px-6">
                 <h2 class="text-3xl md:text-5xl font-black mb-4 text-white">Pronto para o próximo nível?</h2>
-                <p class="text-gray-400 mb-12 text-lg">Entre em Contato</p>
+                <p class="text-gray-400 mb-12 text-lg">Entre em Contacto</p>
                 
                 <form class="space-y-6 text-left" action="#" method="POST" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden');">
                     <div>
-                        <label class="form-label">Seu Nome</label>
-                        <input type="text" placeholder="Digite aqui..." class="form-input" required>
+                        <label class="form-label">O Seu Nome</label>
+                        <input type="text" placeholder="Escreva aqui..." class="form-input" required>
                     </div>
                     <div>
-                        <label class="form-label">Seu Instagram</label>
-                        <input type="text" placeholder="@seuuser" class="form-input" required>
+                        <label class="form-label">O Seu Instagram</label>
+                        <input type="text" placeholder="@oseuuser" class="form-input" required>
                     </div>
                     <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 rounded-lg hover:opacity-90 transition-opacity mt-4 text-lg">
                         Solicitar Orçamento
