@@ -135,7 +135,7 @@
             100% { transform: translateY(0px); }
         }
 
-        /* --- ESTILOS SEÇÃO SERVIÇOS --- */
+        /* --- ESTILOS SECÇÃO SERVIÇOS --- */
         .service-card {
             background-color: var(--card-dark);
             border-radius: 1rem;
@@ -273,7 +273,7 @@
 
     <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
 
-        <!-- Navbar -->
+        <!-- Barra de Navegação -->
         <nav class="sticky top-0 z-50 bg-[#050507]/80 backdrop-blur-md border-b border-white/10 flex justify-between items-center py-4 mb-8 transition-all duration-300">
             <div class="flex items-center gap-2">
                 <div class="text-pink-500 text-2xl"><i class="fas fa-vector-square"></i></div>
@@ -288,7 +288,7 @@
             <button class="md:hidden text-white text-xl"><i class="fas fa-bars"></i></button>
         </nav>
 
-        <!-- Hero Section -->
+        <!-- Secção Hero -->
         <header class="flex flex-col-reverse lg:flex-row items-center justify-between pt-10 pb-20 lg:pt-20 lg:pb-32 gap-12">
             <div class="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div class="badge-available inline-flex items-center px-4 py-2 rounded-full mb-6 uppercase tracking-wider">
@@ -331,7 +331,7 @@
             </div>
         </header>
 
-        <!-- Seção: O Que Eu Faço -->
+        <!-- Secção: O Que Eu Faço -->
         <section class="py-20" id="servicos">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black mb-3 text-white">O Que Eu Faço</h2>
@@ -403,11 +403,11 @@
                      </div>
                  </div>
 
-                 <!-- Story 2: Gloria Groove -->
+                 <!-- Story 2: Gloria Groove (Badge atualizado para Show) -->
                  <div class="story-card group">
                      <img src="https://raw.githubusercontent.com/contatolucasao-netizen/portfolio-rafa/main/%40gloriagroove%20%F0%9F%93%B8...%40centraldagg%20%40espacohall.jpg" alt="Gloria Groove">
                      <div class="story-overlay">
-                         <span class="story-badge">Eventos</span>
+                         <span class="story-badge">Show</span>
                          <h3 class="text-white font-bold text-sm">Gloria Groove no Espaço Hall 🎤✨</h3>
                      </div>
                  </div>
@@ -423,7 +423,7 @@
                         class="w-full h-full object-cover">
                      </video>
                      <div class="story-overlay">
-                         <span class="story-badge">Eventos</span>
+                         <span class="story-badge">Espaço Social</span>
                          <h3 class="text-white font-bold text-sm">Ambiente e Lounge ✨</h3>
                      </div>
                  </div>
@@ -447,7 +447,7 @@
 
             <div class="max-w-2xl mx-auto text-center relative z-10 px-6">
                 <h2 class="text-3xl md:text-5xl font-black mb-4 text-white">Pronto para o próximo nível?</h2>
-                <p class="text-gray-400 mb-12 text-lg">Vamos contar a sua história?</p>
+                <p class="text-gray-400 mb-12 text-lg">Entre em Contato</p>
                 
                 <form class="space-y-6 text-left" action="#" method="POST" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden');">
                     <div>
@@ -466,13 +466,12 @@
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- Rodapé -->
         <footer class="py-10 border-t border-gray-900 text-gray-500 text-sm">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>&copy; 2024 Rafaela Alves. Portfolio Profissional.</p>
+                <p>&copy; 2025 Rafaela Alves. Portfólio Profissional.</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                    <a href="#" class="hover:text-white transition-colors">TikTok</a>
+                    <a href="https://www.instagram.com/eurafa.storymaker?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
                     <a href="#" class="hover:text-white transition-colors">WhatsApp</a>
                 </div>
             </div>
@@ -480,14 +479,21 @@
 
     </div>
 
-    <!-- Script para assegurar que os vídeos comecem a tocar automaticamente -->
+    <!-- Script para assegurar a reprodução automática e o loop infinito -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const videos = document.querySelectorAll('video');
             videos.forEach(video => {
-                video.play().catch(error => {
-                    console.log("O autoplay foi bloqueado pelo navegador, mas o vídeo tentará tocar novamente após interação.");
-                });
+                video.muted = true;
+                video.loop = true;
+                
+                const playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        window.addEventListener('load', () => video.play());
+                    });
+                }
             });
         });
     </script>
